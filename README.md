@@ -11,3 +11,4 @@ Compilers, free, used:
 Available samples:
 
 * hiWorld a must have... Make file for Borland 5.5 and GCC/MinGW64
+* arguments to explore command line arguments
