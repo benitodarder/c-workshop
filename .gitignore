@@ -67,3 +67,9 @@ dkms.conf
 *.la
 *.a
 *.lib
+
+# Borland temporary
+*.ilc
+*.ild
+*.ilf
+*.ils
