@@ -1,5 +1,5 @@
 # Properties
-FILE=fileexists
+FILE=filexists
 SOURCE=$(FILE).c
 COMPILED=$(FILE).o
 TMP_FOLDER=tdm

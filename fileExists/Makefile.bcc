@@ -1,5 +1,5 @@
 # Properties
-FILE=fileexists
+FILE=fileExists
 SOURCE=$(FILE).c
 COMPILED=$(FILE).obj
 TMP_FOLDER=borland5.5
