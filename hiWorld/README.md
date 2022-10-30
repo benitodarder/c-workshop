@@ -7,3 +7,8 @@
    - Link:
       + ilink32.exe -LC:\programs\borlandC5.5\lib /ap  c0x32.obj hiWorldCompiled.obj, hiWorld.exe, ,import32.lib cw32.lib,,
 
+* GCC/TDM:
+   - Compile:
+      + gcc  -c -ogcc/hiWorld.o hiWorld.c
+   - Link:
+      + gcc -o hiWorld.exe gcc/hiWorld.o
