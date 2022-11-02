@@ -12,3 +12,5 @@ Available samples:
 
 * hiWorld a must have... Make file for Borland 5.5 and GCC/MinGW64
 * arguments to explore command line arguments
+* fileExists... Because we always want to know if a file does or doesn't exist
+* externalLib simple use case of a custom exterenal library
