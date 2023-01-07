@@ -1,0 +1,33 @@
+
+FILE=N/A
+SOURCE=$(FILE).c
+COMPILED=$(FILE).obj
+TMP_FOLDER=borland5.5
+EXTENSIONS_TO_CLEAN=*.exe *.tds *.map
+
+BORLAND=C:\Programs\borlandC5.5
+
+CC=$(BORLAND)\bin\BCC32
+INCLUDES_FOLDER=-I$(BORLAND)\Include
+CC_ARGS=-c -tWC   
+
+LINK=$(BORLAND)\bin\ilink32.exe
+LIBRARIES_FOLDER=-L$(BORLAND)\Lib
+LINK_ARGS=/ap
+LIBRARIES=c0x32.obj import32.lib cw32.lib
+
+compileIntArray: intArray.c
+    $(CC) $(INCLUDES_FOLDER) $(CC_ARGS) -o$(TMP_FOLDER)\intArray.o intArray.c
+
+linkIntArray: $(TMP_FOLDER)\intArray.o
+    $(LINK) $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(LINK_ARGS) $(TMP_FOLDER)\intArray.o $(LIBRARIES)
+
+compileCharArray: charArray.c
+    $(CC) $(INCLUDES_FOLDER) $(CC_ARGS) -o$(TMP_FOLDER)\charArray.o charArray.c
+
+linkCharArray: $(TMP_FOLDER)\charArray.o
+    $(LINK) $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(LINK_ARGS) $(TMP_FOLDER)\charArray.o $(LIBRARIES)
+
+clean:
+	del $(EXTENSIONS_TO_CLEAN)
+	del /Q $(TMP_FOLDER)\*.*
