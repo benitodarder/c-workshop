@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
    }
    printf("Array Initialized... Printing...\n");
    for(i = 0; i < argc; i++) {
-      printf("Value by (array + %d): %s\n", (array + i)->pos, (array + i)->argument);
+      printf("Value by array[%d]: %s - Value by (array + %d): %s\n", array[i].pos, array[i].argument, (array + i)->pos, (array + i)->argument);
    } 
    printf("That's all...\n");
    return 0;
