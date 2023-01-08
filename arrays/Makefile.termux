@@ -1,0 +1,34 @@
+# Properties
+TMP_FOLDER=gcc
+PROJECT_NAME=N/A
+PROJECT_SOURCE=$(PROJECT_NAME).c
+PROJECT_OBJECT=$(PROJECT_NAME).o
+PROJECT_OUTPUT=$(PROJECT_NAME).exe
+EXTENSIONS_TO_CLEAN=*.exe
+COMPILER_FOLDER=/data/data/com.termux/files/usr/bin     
+# Compiler
+CC=$(COMPILER_FOLDER)/gcc
+CC_INCLUDES_FOLDER=
+CC_ARGS=-c
+
+# Linker
+LINK=$(COMPILER_FOLDER)/gcc
+LINK_LIBRARIES_FOLDER=
+LINK_ARGS=-o $(PROJECT_OUTPUT)
+LINK_LIBRARIES=
+
+compileIntArray: intArray.c
+  $(CC) $(INCLUDES_FOLDER) $(CC_ARGS) -o$(TMP_FOLDER)/intArray.o intArray.c
+
+linkIntArray: $(TMP_FOLDER)/intArray.o
+  $(LINK) $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(LINK_ARGS) $(TMP_FOLDER)/intArray.o $(LIBRARIES)
+
+compileCharArray: charArray.c
+  $(CC) $(INCLUDES_FOLDER) $(CC_ARGS) -o$(TMP_FOLDER)/charArray.o charArray.c
+
+linkCharArray: $(TMP_FOLDER)/charArray.o
+  $(LINK) $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(LINK_ARGS) $(TMP_FOLDER)/charArray.o $(LIBRARIES)
+
+clean:
+  rm $(EXTENSIONS_TO_CLEAN)
+  rm $(TMP_FOLDER)/*.*
