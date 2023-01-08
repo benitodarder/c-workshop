@@ -1,6 +1,6 @@
 # Properties
 TMP_FOLDER=gcc
-PROJECT_NAME=hiWorld
+PROJECT_NAME=intArray
 PROJECT_SOURCE=$(PROJECT_NAME).c
 PROJECT_OBJECT=$(PROJECT_NAME).o
 PROJECT_OUTPUT=$(PROJECT_NAME).exe
@@ -19,18 +19,16 @@ LINK_ARGS=-o $(PROJECT_OUTPUT)
 LINK_LIBRARIES=
 
 # Targets
-compileIntArray: intArray.c
-   $(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/intArray.o intArray.c
+$(TMP_FOLDER)/$(PROJECT_OBJECT): $(PROJECT_SOURCE)
+	$(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/$(PROJECT_OBJECT) $(PROJECT_SOURCE)
 
-linkIntArray: $(TMP_FOLDER)/intArray.o
-   $(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/intArray.o $(LINK_LIBRARIES)
+$(PROJECT_OUTPUT): $(TMP_FOLDER)/$(PROJECT_OBJECT)
+	$(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/$(PROJECT_OBJECT) $(LINK_LIBRARIES)
+	
+compile: $(TMP_FOLDER)/$(PROJECT_OBJECT)
 
-compileCharArray: charArray.c
-   $(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/charArray.o charArray.c
-
-linkCharArray: $(TMP_FOLDER)/charArray.o
-   $(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/charArray.o $(LINK_LIBRARIES)
+link: $(PROJECT_OUTPUT)
 
 clean:
-   rm $(EXTENSIONS_TO_CLEAN) || true
-   rm $(TMP_FOLDER)/*.* || true
+	rm $(EXTENSIONS_TO_CLEAN) || true
+	rm $(TMP_FOLDER)/*.* || true
