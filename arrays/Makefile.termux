@@ -23,14 +23,14 @@ compileIntArray: intArray.c
 	$(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/intArray.o intArray.c
 
 linkIntArray: $(TMP_FOLDER)/intArray.o
-	$(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/intArray.o $(LINK_LIBRARIES)
+	$(LINK) -o intArray.exe $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/intArray.o $(LINK_LIBRARIES)
 	
 
 compileCharArray: charArray.c
 	$(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/charArray.o charArray.c
 
 linkCharArray: $(TMP_FOLDER)/charArray.o
-	$(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/charArray.o $(LINK_LIBRARIES)
+	$(LINK) -o charArray.exe $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/charArray.o $(LINK_LIBRARIES)
 	
 
 clean:
