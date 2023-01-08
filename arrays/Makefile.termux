@@ -10,7 +10,7 @@ COMPILER_FOLDER=/data/data/com.termux/files/usr/bin
 # Compiler
 CC=$(COMPILER_FOLDER)/gcc
 CC_INCLUDES_FOLDER=
-CC_ARGS=-c  
+CC_ARGS=-c
 
 # Linker
 LINK=$(COMPILER_FOLDER)/gcc
