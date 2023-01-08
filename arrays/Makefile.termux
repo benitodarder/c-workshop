@@ -1,15 +1,16 @@
 # Properties
 TMP_FOLDER=gcc
-PROJECT_NAME=N/A
+PROJECT_NAME=hiWorld
 PROJECT_SOURCE=$(PROJECT_NAME).c
 PROJECT_OBJECT=$(PROJECT_NAME).o
 PROJECT_OUTPUT=$(PROJECT_NAME).exe
 EXTENSIONS_TO_CLEAN=*.exe
-COMPILER_FOLDER=/data/data/com.termux/files/usr/bin     
+COMPILER_FOLDER=/data/data/com.termux/files/usr/bin
+
 # Compiler
 CC=$(COMPILER_FOLDER)/gcc
 CC_INCLUDES_FOLDER=
-CC_ARGS=-c
+CC_ARGS=-c  
 
 # Linker
 LINK=$(COMPILER_FOLDER)/gcc
@@ -17,18 +18,19 @@ LINK_LIBRARIES_FOLDER=
 LINK_ARGS=-o $(PROJECT_OUTPUT)
 LINK_LIBRARIES=
 
+# Targets
 compileIntArray: intArray.c
-  $(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/intArray.o intArray.c
+   $(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/intArray.o intArray.c
 
 linkIntArray: $(TMP_FOLDER)/intArray.o
-  $(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/intArray.o $(LINK_LIBRARIES)
+   $(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/intArray.o $(LINK_LIBRARIES)
 
 compileCharArray: charArray.c
-  $(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/charArray.o charArray.c
+   $(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/charArray.o charArray.c
 
 linkCharArray: $(TMP_FOLDER)/charArray.o
-  $(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/charArray.o $(LINK_LIBRARIES)
+   $(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/charArray.o $(LINK_LIBRARIES)
 
 clean:
-  rm $(EXTENSIONS_TO_CLEAN) || true
-  rm $(TMP_FOLDER)/*.* || true
+   rm $(EXTENSIONS_TO_CLEAN) || true
+   rm $(TMP_FOLDER)/*.* || true
