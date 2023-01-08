@@ -28,6 +28,12 @@ compileCharArray: charArray.c
 linkCharArray: $(TMP_FOLDER)\charArray.o
     $(LINK) $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(LINK_ARGS) $(TMP_FOLDER)\charArray.o $(LIBRARIES)
 
+compileStructArray: structArray.c
+    $(CC) $(INCLUDES_FOLDER) $(CC_ARGS) -o$(TMP_FOLDER)\structArray.o structArray.c
+
+linkStructArray: $(TMP_FOLDER)\structArray.o
+    $(LINK) $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(LINK_ARGS) $(TMP_FOLDER)\structArray.o $(LIBRARIES)
+
 clean:
 	del $(EXTENSIONS_TO_CLEAN)
 	del /Q $(TMP_FOLDER)\*.*

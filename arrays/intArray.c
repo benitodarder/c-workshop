@@ -2,23 +2,23 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-   int *intArray;
+   int *array;
    int items;
    int i;
-   printf("Number of intArray: %d\n", argc);
+   printf("Number of array: %d\n", argc);
    items = atoi(argv[1]);
    printf("Will generate an array of: %d\n", items);
-   intArray = malloc(sizeof(int) * items);
+   array = malloc(sizeof(int) * items);
    printf("Array allocated.\n");
    for(i = 0; i < items; i++) {
-      intArray[i] = (items - i);
+      array[i] = (items - i);
    }
    printf("Array Initialized... Printing...\n");
    for(i = 0; i < items; i++) {
-      printf("Arg: %d - Value: %d\n", i, intArray[i]);
+      printf("Value by array[%d]: %d - Value by  (array + %d): %d\n", i, array[i], i, *(array + i));
    } 
-   printf("Array first element: %d\n", *intArray);
-   printf("Array: %d\n", intArray);
+   printf("Array first element: %d\n", *array);
+   printf("Array: %d\n", array);
    printf("That's all...\n");
    return 0;
 }
