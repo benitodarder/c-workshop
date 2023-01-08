@@ -18,17 +18,17 @@ LINK_ARGS=-o $(PROJECT_OUTPUT)
 LINK_LIBRARIES=
 
 compileIntArray: intArray.c
-  $(CC) $(INCLUDES_FOLDER) $(CC_ARGS) -o$(TMP_FOLDER)/intArray.o intArray.c
+  $(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/intArray.o intArray.c
 
 linkIntArray: $(TMP_FOLDER)/intArray.o
-  $(LINK) $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(LINK_ARGS) $(TMP_FOLDER)/intArray.o $(LIBRARIES)
+  $(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/intArray.o $(LINK_LIBRARIES)
 
 compileCharArray: charArray.c
-  $(CC) $(INCLUDES_FOLDER) $(CC_ARGS) -o$(TMP_FOLDER)/charArray.o charArray.c
+  $(CC) $(CC_ARGS) $(CC_INCLUDES_FOLDER) -o$(TMP_FOLDER)/charArray.o charArray.c
 
 linkCharArray: $(TMP_FOLDER)/charArray.o
-  $(LINK) $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(LINK_ARGS) $(TMP_FOLDER)/charArray.o $(LIBRARIES)
+  $(LINK) $(LINK_ARGS) $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/charArray.o $(LINK_LIBRARIES)
 
 clean:
-  rm $(EXTENSIONS_TO_CLEAN)
-  rm $(TMP_FOLDER)/*.*
+  rm $(EXTENSIONS_TO_CLEAN) || true
+  rm $(TMP_FOLDER)/*.* || true
