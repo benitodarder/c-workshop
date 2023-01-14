@@ -34,6 +34,12 @@ compileStructArray: structArray.c
 linkStructArray: $(TMP_FOLDER)\structArray.o
     $(LINK) $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(LINK_ARGS) $(TMP_FOLDER)\structArray.o $(LIBRARIES)
 
+compileStructArrayStringCopy: structArrayStringCopy.c
+    $(CC) $(INCLUDES_FOLDER) $(CC_ARGS) -o$(TMP_FOLDER)\structArrayStringCopy.o structArrayStringCopy.c
+
+linkStructArrayStringCopy: $(TMP_FOLDER)\structArrayStringCopy.o
+    $(LINK) $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(LINK_ARGS) $(TMP_FOLDER)\structArrayStringCopy.o $(LIBRARIES)
+
 clean:
 	del $(EXTENSIONS_TO_CLEAN)
 	del /Q $(TMP_FOLDER)\*.*
