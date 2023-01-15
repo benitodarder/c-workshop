@@ -14,7 +14,8 @@ Available samples:
 * arguments to explore command line arguments
 * fileExists... Because we always want to know if a file does or doesn't exist
 * externalLib simple use case of a custom exterenal library
-* arrays ... Dynamic arrays everywhere...
+* arrays... Dynamic arrays everywhere...
    + intArray creates and fill an integer array with the number of items stated in the command line
    + charArray creates and fill a char array/string the the first n-letters stated in the command line
    + structArray creates and fill a struct, position and argument, array with the command line arguments
+* freeMem... Get free memory... Currently only in GCC and linux
