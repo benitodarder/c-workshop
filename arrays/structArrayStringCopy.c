@@ -13,7 +13,6 @@ int main(int argc, char *argv[]) {
    int i;
    char *aux;
    printf("Number of arguments: %d\n", argc);
-   printf("Memory available: %l\n", argc);
    array = (struct Argument*)  malloc(sizeof(struct Argument) * argc);
    printf("Memory allocated.\n");
    for(i = 0; i < argc; i++) {

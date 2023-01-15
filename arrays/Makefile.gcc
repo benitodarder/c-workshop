@@ -32,6 +32,17 @@ compileCharArray: charArray.c
 linkCharArray: $(TMP_FOLDER)/charArray.o
 	$(LINK) -o charArray.exe $(LINK_LIBRARIES_FOLDER)  $(TMP_FOLDER)/charArray.o $(LINK_LIBRARIES)
 	
+compileStructArray: structArray.c
+	$(CC) $(INCLUDES_FOLDER) $(CC_ARGS) -o$(TMP_FOLDER)/structArray.o structArray.c
+
+linkStructArray: $(TMP_FOLDER)/structArray.o
+	$(LINK) -o structArray.exe $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(TMP_FOLDER)/structArray.o $(LIBRARIES)
+
+compileStructArrayStringCopy: structArrayStringCopy.c
+	$(CC) $(INCLUDES_FOLDER) $(CC_ARGS) -o$(TMP_FOLDER)/structArrayStringCopy.o structArrayStringCopy.c
+
+linkStructArrayStringCopy: $(TMP_FOLDER)/structArrayStringCopy.o
+	$(LINK) -o structArrayStringCopy.exe $(LIBRARIES_FOLDER) -I$(TMP_FOLDER) $(TMP_FOLDER)/structArrayStringCopy.o $(LIBRARIES)
 
 clean:
 	rm $(EXTENSIONS_TO_CLEAN) || true
