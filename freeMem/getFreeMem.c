@@ -15,9 +15,9 @@ int main(int argc, char *argv[]) {
    freeMemInGb = (float) freeMemInMb / 1000;
    printf("Conversions applied following 1998 convention 1Kb = 10^3b\n");
    printf("Free memory in bytes: %lld\n", freeMemInBytes);
-   printf("Free memory in kilobytes: %lld\n", freeMemInKb);
-   printf("Free memory in megabytes: %lld\n", freeMemInMb);
-   printf("Free memory in gigabytes: %f\n", freeMemInGb);
+   printf("Free memory in kilobytes: %lu\n", freeMemInKb);
+   printf("Free memory in megabytes: %lu\n", freeMemInMb);
+   printf("Free memory in gigabytes: %.2f\n", freeMemInGb);
    printf("That's all folks!\n");
    return 0;
 }
