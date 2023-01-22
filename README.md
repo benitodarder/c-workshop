@@ -18,4 +18,4 @@ Available samples:
    + intArray creates and fill an integer array with the number of items stated in the command line
    + charArray creates and fill a char array/string the the first n-letters stated in the command line
    + structArray creates and fill a struct, position and argument, array with the command line arguments
-* freeMem... Get free memory... Currently only in GCC and linux
+* freeMem... Get free memory... Currently only tested in GCC
