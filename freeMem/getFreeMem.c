@@ -3,15 +3,21 @@
 #include "freemem.h"
 
 int main(int argc, char *argv[]) {
-   unsigned long long freemem;
+   unsigned long long freeMemInBytes;
+   unsigned long freeMemInKb,
+                  freeMemInMb;
+   float freeMemInGb;
    
    printf("There we go...\n");
-   freemem =  getTotalSystemMemory();
+   freeMemInBytes =  getTotalSystemMemory();
+   freeMemInKb = freeMemInBytes / 1000;
+   freeMemInMb = freeMemInKb / 1000;
+   freeMemInGb = (float) freeMemInMb / 1000;
    printf("Conversions applied following 1998 convention 1Kb = 10^3b\n");
-   printf("Free memory in bytes: %lld\n", freemem);
-   printf("Free memory in kilobytes: %lld\n", freemem / 1000);
-   printf("Free memory in megabytes: %lld\n", freemem / 1000000);
-   printf("Free memory in gigabytes: %f\n", (float)(freemem / 1000000000));
+   printf("Free memory in bytes: %lld\n", freeMemInBytes);
+   printf("Free memory in kilobytes: %lld\n", freeMemInKb);
+   printf("Free memory in megabytes: %lld\n", freeMemInMb);
+   printf("Free memory in gigabytes: %f\n", freeMemInGb);
    printf("That's all folks!\n");
    return 0;
 }
